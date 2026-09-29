@@ -134,7 +134,7 @@ The seed script creates local development users. Change these credentials immedi
 
 | Role | Email | Password |
 |---|---|---|
-| Admin | admin@example.com | Admin@12345 |
+| Admin | admin@gmail.com | admin@123456 |
 | Base Commander | commander.alpha@example.com | Commander@12345 |
 | Logistics Officer | logistics.alpha@example.com | Logistics@12345 |
 
@@ -204,17 +204,3 @@ This repository includes a `render.yaml` Blueprint that provisions:
 - `military-assets-api`: Node/Express web service
 - `military-assets-db`: Render PostgreSQL database
 
-### Deploy
-
-1. Push the repository to GitHub or GitLab.
-2. In Render, choose **New > Blueprint** and connect the repository.
-3. Render detects `render.yaml`.
-4. When prompted, enter `ADMIN_EMAIL` and a strong `ADMIN_PASSWORD` (at least 12 characters).
-5. Deploy the Blueprint.
-6. After all resources are live, open the `military-assets-web` URL and sign in with the admin credentials you supplied.
-
-The production start command initializes the schema idempotently and bootstraps the admin account only if it does not already exist. It does **not** use the hard-coded demo accounts from `npm run seed`.
-
-### Important
-
-The free Render configuration is intended only for demonstrations and evaluation. Free web services may sleep when idle, and free PostgreSQL has platform limitations. Do not store real operational, classified, export-controlled, or otherwise sensitive military information in this demo deployment. Production use requires an approved infrastructure/security review, stronger identity controls, secret management, backups, monitoring, network restrictions, and organizational compliance controls.
